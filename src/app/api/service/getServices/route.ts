@@ -1,0 +1,41 @@
+import Service from '../../../../models/Service';
+import { NextResponse } from 'next/server';
+import {jwtDecode} from "jwt-decode";
+
+interface DecodedToken {
+    user: {
+      id: number;
+    };
+  } 
+
+export async function POST(req: any) {
+  const token = req.cookies.get('token');
+  
+  if (!token) {
+      return NextResponse.json({ error: 'No token provided' }, { status: 401 });
+  }
+
+  let decodedToken: DecodedToken;
+    try {
+      decodedToken = jwtDecode<DecodedToken>(token.value);
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return NextResponse.json({ error: 'Invalid token' }, { status: 400 });
+    }
+
+  const userId = decodedToken.user?.id;
+  if (!userId) {
+      return NextResponse.json({ error: 'User ID not found in token' }, { status: 401 });
+  }
+
+  try {
+      const services = await Service.findAll({
+          where: { user_id: userId },
+          order: [['id', 'ASC']] 
+      });
+      return NextResponse.json(services);
+  } catch (error) {
+      console.error('Error fetching services:', error);
+      return NextResponse.json({ error: 'Error fetching services' }, { status: 500 });
+  }
+}

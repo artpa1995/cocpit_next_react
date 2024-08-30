@@ -1,0 +1,733 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700;900&display=swap');
+
+
+ :root {
+  /* --foreground-rgb: 0, 0, 0; */
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  /* color: rgb(var(--foreground-rgb)); */
+  background:  rgb(var(--background-end-rgb));
+}
+
+/* html, body, .app{
+  height: 100%;
+} */
+
+.approved{
+  color:rgb(36, 129, 36)
+}
+
+.pending{
+  color: orange;
+}
+
+.rejected{
+  color:brown
+}
+
+.sidebar_content{
+  background-color: #EEEEEE;
+}
+.sidebar{
+  width: 100%;
+  width: 400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-bottom: 50px;
+}
+.text_color{
+  color: #595959;
+}
+.sidebar_section1{
+  padding: 0px 25px;
+}
+
+.logo{
+  cursor: pointer;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 15px;
+
+}
+.user_full_name{
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+  color: #595959;
+}
+.user_full_name .firstName{
+  font-weight: 700;
+}
+
+
+.my_buttons{
+  color: #595959;
+  font-weight: 600;
+  padding: 7px 15px;
+  font-size: 14px;
+  border-radius: 22px;
+}
+.my_buttons_border{
+  border:1px solid #B7B7B7;
+}
+
+.settings_buttons_block{
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+  color: #595959;
+  font-weight: 600;
+}
+
+.settings_buttons_block button{
+  background-color: white;
+  
+}
+
+.settings_buttons_block .buttons{
+  padding: 7px 15px;
+  font-size: 14px;
+  border-radius: 22px;
+}
+
+.settings_buttons_block .toDosetting_button {
+  border: 1px solid #bdb7b7;
+  padding: 6px 6px;
+  border-radius: 100%;
+}
+
+.settings_buttons_block button:hover, .buttons_block .my_buttons:hover {
+  background-color:#595959;
+  color: white;
+}
+.settings_buttons_block button:hover path{
+  fill: white;
+  stroke: white;
+}
+
+.settings_buttons_block button.active, .buttons_block .my_buttons.active{
+  background-color:#595959;
+  color: white;
+  stroke: white;
+}
+
+.settings_buttons_block button.active path{
+
+  stroke: white;
+}
+
+.contact_gmail, .next_step, .more_client{
+  border-radius: 12px;
+  background-color: white;
+  color: #595959;
+  margin-top: 25px;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact_gmail{
+  border:3px solid #FF9900;
+  padding-left: 10px;
+}
+.next_step{
+  gap:20px
+}
+.more_client{
+  border:1px solid #4285F4;
+  padding-left: 10px;
+  gap:10px;
+}
+
+.contact_gmail .text, .more_client .text, .next_step .text {
+  line-height: 20px;
+  font-size: 15px;
+}
+
+.contact_gmail .cirkul, .more_client .cirkul{
+  padding: 10px;
+  background-color:#4285F4 ;
+  border-radius: 100%;
+}
+
+.next_step .dollar {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.header_menu{
+  display: flex;
+  gap:10px;
+}
+.header_menu .menu_line{
+  margin-left: 10px;
+}
+.page-content{
+  width: 100%;
+  padding: 0px 30px;
+  padding-top: 15px;
+}
+
+.page_content_block{
+  position: relative;
+  border:1px solid #B7B7B7;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none;
+}
+
+
+.page_content_block::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.page_content_block .content{
+  padding: 30px;
+}
+
+.page_content_block .resize{
+  border-left: 1px solid #B7B7B7;
+  height: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 8px;
+  bottom: -14px;
+  cursor: e-resize;
+  padding-left: 4px;
+  background-color: white;
+}
+
+.page_content_block .resize div{
+  position:relative;
+  color: #B7B7B7;
+}
+
+.page_content_block .resize_up_down{
+  width: 40px;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: s-resize;
+  margin: 0 auto;
+}
+
+.page_content_block .settings{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  display: flex;
+  gap:10px
+}
+
+.page_content_block .settings .settings_button_block{
+  display: flex;
+  gap:10px
+}
+
+.page_content_block .settings .settings_button_block button{
+  font-weight: bold;
+  color: #4285F6;
+}
+
+.calcugation_blocks{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between ;
+  margin-top: 40px;
+}
+
+.calcugation_blocks .calcugation_block{
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 30px;
+  border:1px solid #B7B7B7;
+  padding: 20px;
+  border-radius: 12px;
+}
+.calcugation_blocks .calcugation_block>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #595959;
+}
+
+
+
+.page_info{
+  margin-top: 50px;
+  margin-bottom: 60px;
+  padding: 20px 60px;
+  background-color: #EEEEEE;
+  border:1px solid #B7B7B7;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+.page_info .page_info_head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page_info .page_info_head h3{
+  font-weight: 600;
+}
+
+.page_info .page_info_head>div{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+.page_info .page_info_head button{
+  background-color: white;
+  padding: 7px 15px;
+  font-size: 14px;
+  border-radius: 22px;
+  font-weight: 600;
+  color: #595959;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.page_info .page_info_head button:hover {
+  background-color:#595959;
+  color: white;
+}
+
+.page_info .page_info_head button.active{
+  background-color:#595959;
+  color: white;
+  stroke: white;
+}
+.page_info .video{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.page_info .video> iframe{
+  width: 600px;
+  height: 338px;
+  border-radius: 12px;
+}
+
+.page_info  .link_button{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.page_info  .link_button a{
+  color: white;
+  font-weight: 600;
+  padding: 12px 50px;
+  background-color: #4285F4;
+  border-radius: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.page_info .description{
+  margin-top: 30px;
+}
+
+.cart_block{
+  background-color: #F3F3F3;
+  width:  350px;
+  min-height: 271px;
+
+}
+.cart_block .apexcharts-legend{
+  /* display: none; */
+}
+
+.chart_legends, .chart_legends>div {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.chart_legends>div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+.chart_legends span{
+  font-size: 12px;
+}
+
+.chart_legends .cube {
+  width: 15px;
+  height: 15px;
+  background-color: #0B5394;
+  border-radius: 3px;
+}
+
+
+.chart_legends  .small_line{
+  width: 18px;
+  height: 5px;
+  background-color: #FFC300;
+}
+
+.chart_legends  .big_line{
+  width: 18px;
+  height: 5px;
+  background-color: #6AA84F;
+}
+
+
+.buttons_block{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.booking_clients_blocks{
+  border: 1px solid #B7B7B7;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 10px;
+  padding: 2px;
+  overflow: auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.booking_clients_blocks::-webkit-scrollbar {
+  width: 2px;
+}
+
+.booking_clients_blocks::-webkit-scrollbar {
+  height: 3px;
+}
+
+.booking_clients_block {
+  display: flex;
+}
+
+
+
+.booking_clients_block .clients_block{
+  min-width: 250px;
+  border-right:  4px solid #C7C7C7;
+}
+
+.total_results_block{
+  background-color: #D0E2F4;
+
+}
+.total_results_block .total{
+  min-width: 250px;
+  border-right:  4px solid #C7C7C7;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0D5295;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+.total_results_block, .total_results_block .total_results{
+  display: flex;
+}
+.total_results_block .total_results{
+width: 100%;
+}
+.total_results_block .total_results .results{
+  display: flex;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  align-items: center;
+  justify-content: center;
+  color: #0D5295;
+  font-family: 'Raleway', sans-serif;
+  padding: 10px 3px;
+  min-width: 90px;
+  font-weight: bold;
+  background-color: #D0E2F4;
+}
+
+
+.booking_clients_block .header_part {
+  border-bottom:  4px solid #C7C7C7;
+  /* display: flex; */
+  width: 100%;
+  height: 49px;
+}
+
+.booking_clients_block .head_block{
+  background-color: #0076BA;
+  color: white;
+  padding: 10px 3px;
+  height: 45px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.booking_clients_block .head_block a{
+  text-decoration: underline;
+}
+
+.booking_clients_block .head_block .add_client{
+  font-weight: 600;
+  padding: 2px 20px;
+  font-size: 14px;
+  border-radius: 22px;
+  background-color: white;
+  color: #0076BA;
+  font-family: 'Raleway', sans-serif;
+}
+
+.booking_clients_block .clients_block .head_block{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.booking_clients_block .table_block{
+  /* display: flex; */
+}
+.booking_clients_block .table_block .head_block{
+  border-right: 1px solid grey;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking_clients_block .items{
+  padding: 3px;
+  border-bottom: 1px solid #E2E2E2;
+}
+
+.booking_clients_block .clients{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #797979;
+  font-family: 'Raleway', sans-serif;
+}
+.booking_clients_block .clients a {
+  width: 200px;
+  overflow: auto;
+  height: 30px;
+}
+
+.bookings_info_blocks{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.bookings_info_blocks .info_block{
+  border: 1px solid #B7B7B7;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 12px;
+  color: #595959;
+  font-family: 'Raleway', sans-serif;
+}
+
+.bookings_info_blocks .info_block {
+  
+}
+.booking_row{
+  display: flex;
+}
+
+.booking_column{
+  height: 37px;
+  display: flex;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  width: 90px;
+  align-items: center;
+  justify-content: center;
+  color: #595959;
+  font-family: 'Raleway', sans-serif;
+}
+
+.booking_column.empty{
+  background-color: #EFEFEF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Admin */
+
+.admin_menu_title{
+  color: #595959;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.admin_menu_links{
+  margin-top: 30px;
+  color: #595959;
+  font-family: 'Raleway', sans-serif;
+  padding: 20px;
+  padding-right: 60px;
+  background-color: white;
+  border-radius: 12px;
+  width: 350px;
+  ;
+}
+
+.admin_menu_links .header_block {
+  font-weight: 600;
+  display: flex;
+  gap: 15px;  
+}
+
+.admin_menu_links .links_block{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  gap: 10px;
+}
+
+.admin_dashboard{
+  padding: 30px;
+  border:1px solid #B7B7B7;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.admin_dashboard .title {
+  color: #595959;
+  font-weight: bold;
+
+
+}
+
+.admin_dashboard .form{
+  margin-top: 40px;
+  padding: 30px 0px 10px 0px;
+  border-bottom:1px solid #B7B7B7;
+  border-top:1px solid #B7B7B7;
+}
+
+.admin_dashboard .form_items{
+  margin-bottom: 30px;
+  display: flex;
+  align-items: start;
+}
+
+.admin_dashboard .form_labels{
+  width: 180px;
+  color: #595959;
+  font-weight: bold;
+}
+
+.admin_dashboard  .jodit-react-container{
+  max-width: 715px;
+  width: 100%;
+}
+
+.add_onditional_content_block{
+  padding: 30px 0px 60px 0px;
+}
+
+.add_onditional_content_block button{
+  color: #4285F6;
+  font-weight: bold;
+}
+
+/* globals.css */
+.loader {
+  border-top-color: #3498db;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pro-menu-item a {
+    text-decoration: none;
+    color: #adadad;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+@media only screen and (max-width: 768px) {
+  .admin_user_main {
+    width:768px;
+    overflow-x: auto;
+  }
+}

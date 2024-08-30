@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "cookpit_coaching",
+    "password": "Admin2024!@#$",
+    "database": "cookpit_coach",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "cookpit_coaching",
+    "password": "Admin2024!@#$",
+    "database": "cookpit_coach",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "cookpit_coaching",
+    "password": "Admin2024!@#$",
+    "database": "cookpit_coach",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
+
+
